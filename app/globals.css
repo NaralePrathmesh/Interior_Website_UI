@@ -715,3 +715,17 @@ a{text-decoration-thickness:1px}
 .studio-img span{position:absolute;left:14px;bottom:12px;right:14px;color:#fff;font:500 16.7px/1.1 var(--display);text-shadow:0 1px 14px rgb(0 0 0 /.6)}
 .studio-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgb(0 0 0 /.6))}
 .studio-img span{z-index:1}
+
+/* Diamond Spaces logo */
+.logo{display:block;height:44px;width:auto;max-width:100%}
+header.site .brand .logo{height:58px;transition:height .3s ease,transform .3s ease}
+header.site.scrolled .brand .logo{height:48px}
+header.site .brand:hover .logo{transform:scale(1.03)}
+footer.site .brand .logo{height:64px}
+.side .brand .logo{height:46px}
+.login .brand .logo{height:42px}
+@media (max-width:460px){header.site .brand .logo{height:46px}header.site.scrolled .brand .logo{height:40px}}
+html[data-theme="dark"] .logo-light-only{display:none}
+html:not([data-theme="dark"]) .logo-dark-only{display:none}
+header.site .brand{flex:none}
+header.site .brand .logo{max-width:none}

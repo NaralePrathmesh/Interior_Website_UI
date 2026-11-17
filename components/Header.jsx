@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 import { useStore } from '@/lib/store';
 import { useTheme } from '@/lib/theme';
 import { pub, slug } from '@/lib/utils';
-import { Arrow, BrandMark, Caret, Icon, Ico, Photo } from './ui/primitives';
+import { Arrow, Logo, Caret, Icon, Ico, Photo } from './ui/primitives';
 
 export function ThemeButton({ className = '' }) {
   const { theme, toggle } = useTheme();
@@ -67,9 +67,8 @@ export default function Header() {
       </div></div>
 
       <div className="wrap bar">
-        <Link className="brand" href="/" aria-label={`${S.name} home`}>
-          <BrandMark />
-          <span className="bname"><b>{S.name}</b><small>Interiors · Architecture</small></span>
+        <Link className="brand" href="/" aria-label="Diamond Spaces home">
+          <Logo />
         </Link>
 
         <nav className={`main ${open ? 'open' : ''}`} id="mainNav" aria-label="Main" ref={nav}>

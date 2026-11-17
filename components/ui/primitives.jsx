@@ -41,6 +41,17 @@ export function Ico({ name, size = 14 }) {
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" dangerouslySetInnerHTML={{ __html: SMALL[name] || '' }} />
   );
 }
+/* Silver-white logo (client supplied), for dark backgrounds. `auto` shows the gold
+   logo instead where the background is light (footer/admin in the light theme).
+   Other versions in public/assets/images: logo.png (gold), logo-white.png,
+   logo-gold-white-border.png. */
+export function Logo({ variant = 'white' }) {
+  const img = (src, cls, alt) => <img className={`logo ${cls}`} src={src} alt={alt} width={640} height={190} />;
+  const white = img('/assets/images/logo-silver.png', variant === 'auto' ? 'logo-dark-only' : '', 'Diamond Spaces');
+  if (variant !== 'auto') return white;
+  return <>{white}{img('/assets/images/logo.png', 'logo-light-only', '')}</>;
+}
+
 export function BrandMark() {
   return (
     <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
