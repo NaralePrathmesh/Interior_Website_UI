@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useStore } from '@/lib/store';
 import { pub } from '@/lib/utils';
-import { BrandMark } from './ui/primitives';
+import { Logo } from './ui/primitives';
 
 export default function Footer() {
   const { S, db } = useStore();
@@ -12,7 +12,7 @@ export default function Footer() {
       <footer className="site"><div className="wrap">
         <div className="cols">
           <div className="stack" style={{ gap: 12 }}>
-            <Link className="brand" href="/" style={{ color: 'var(--on-deep)' }}><BrandMark /><span>{S.name}</span></Link>
+            <Link className="brand" href="/" aria-label="Diamond Spaces home"><Logo variant="auto" /></Link>
             <p style={{ color: 'var(--on-deep-muted)', fontSize: 14, maxWidth: '34ch' }}>{S.tagline}. {Number(S.projectsDone).toLocaleString('en-IN')}+ projects delivered since 2014.</p>
           </div>
           <div><h4>Company</h4><ul><li><Link href="/about">About</Link></li><li><Link href="/services">Services</Link></li><li><Link href="/projects">Projects</Link></li><li><Link href="/contact">Contact</Link></li></ul></div>

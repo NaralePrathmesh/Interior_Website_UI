@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 import { useStore } from '@/lib/store';
 import { STAT_COL, STATUSES } from '@/lib/data';
 import { inr, num, rel, slug, todayISO, uid, photoURL } from '@/lib/utils';
-import { BrandMark, Photo } from '../ui/primitives';
+import { Logo, Photo } from '../ui/primitives';
 import { ThemeButton } from '../Header';
 import { useOpenProject } from '../blocks';
 import { lift } from '../fx';
@@ -33,7 +33,7 @@ function Login() {
     <div className="login">
       <motion.form className="card" onSubmit={submit} noValidate initial={{ opacity: 0, y: 30, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ type: 'spring', stiffness: 260, damping: 24 }}>
         <div className="row" style={{ justifyContent: 'space-between' }}>
-          <Link className="brand" href="/"><BrandMark /><span>{db.settings.name}</span></Link>
+          <Link className="brand" href="/" aria-label="Diamond Spaces home"><Logo variant="auto" /></Link>
           <ThemeButton className="admin-t" />
         </div>
         <div><h2 style={{ fontSize: 22.5 }}>Admin sign in</h2><p className="muted" style={{ fontSize: 14, marginTop: 4 }}>Manage projects, enquiries and site content.</p></div>
@@ -368,7 +368,7 @@ export default function Admin() {
   return (
     <div className="admin" ref={root}>
       <aside className="side" aria-label="Admin navigation">
-        <Link className="brand" href="/"><BrandMark /><span>{db.settings.name}</span></Link>
+        <Link className="brand" href="/" aria-label="Diamond Spaces home"><Logo variant="auto" /></Link>
         {NAV.map(([g, items]) => {
           const vis = items.filter(([k]) => can(adm.role, k));
           if (!vis.length) return null;
